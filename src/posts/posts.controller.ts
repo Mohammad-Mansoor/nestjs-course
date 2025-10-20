@@ -21,7 +21,6 @@ import { PostExistsPipe } from './pipes/post-exists.pipe';
 @Controller('posts')
 export class PostsController {
   constructor(private readonly postService: PostsService) {}
-
   @Get()
   async findAll(@Query('search') search: string): Promise<postInterface[]> {
     return await this.postService.findAll();
